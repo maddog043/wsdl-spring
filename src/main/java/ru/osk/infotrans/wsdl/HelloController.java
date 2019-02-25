@@ -18,4 +18,8 @@ public class HelloController {
     public String index() {
         return "Hello world!";
     }
+    @RequestMapping("/say")
+    public String say() {
+        return "Said hello world!";
+    }
 }
