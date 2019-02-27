@@ -33,6 +33,26 @@
             <artifactId>wsdl4j</artifactId>
         </dependency>
     </dependencies>
+    
+    <profiles>
+        <profile>
+            <id>release-profile</id>
+            <properties>
+                <activatedProperties>release</activatedProperties>
+                <maven.javadoc.skip>true</maven.javadoc.skip>
+            </properties>
+        </profile>
+        <profile>
+            <id>dev</id>
+            <properties>
+                <activatedProperties>dev</activatedProperties>
+            </properties>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+        </profile>
+    </profiles>
+    
     <build>
         <plugins>
             <plugin>
