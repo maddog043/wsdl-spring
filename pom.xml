@@ -38,11 +38,13 @@
             <id>release-profile</id>
             <properties>
                 <activatedProperties>release</activatedProperties>
-                <maven.javadoc.skip>true</maven.javadoc.skip>
             </properties>
         </profile>
         <profile>
             <id>dev</id>
+            <build>
+                <finalName>wsdl-test</finalName>
+            </build>
             <properties>
                 <activatedProperties>dev</activatedProperties>
             </properties>
@@ -74,6 +76,13 @@
                     <schemaDirectory>${project.basedir}/src/main/resources/</schemaDirectory>
                     <outputDirectory>${project.basedir}/src/main/java</outputDirectory>
                     <clearOutputDir>false</clearOutputDir>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-javadoc-plugin</artifactId>
+                <configuration>
+                    <doclint>none</doclint>
                 </configuration>
             </plugin>
         </plugins>
